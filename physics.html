@@ -3,10 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Программа — Интеграл Лебега и теория поля</title>
+  <title>Программа — Электричество и магнетизм</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Кнопка для открытия меню -->
+  <button class="open-btn" id="menuToggle" onclick="openNav()">☰</button>
+
+  <!-- Боковое меню -->
+  <div id="sidebar" class="sidebar">
+    <a href="matan.html">Интеграл Лебега и теория поля</a>
+    <a href="physics.html">Электричество и магнетизм</a>
+  </div>
+
   <div class="paper">
     <header class="seal">
       <h1 class="title">Интеграл Лебега и теория поля</h1>
@@ -267,6 +276,33 @@
     if (e.key === 'Escape') modal.style.display = 'none';
   });
   </script>
+
+  <script>
+  const sidebar = document.getElementById('sidebar');
+  let menuOpen = false;
+
+  function openNav() {
+    menuOpen = !menuOpen;
+
+    if (menuOpen) {
+      sidebar.classList.add('open');
+      document.querySelector('.open-btn').textContent = '×';
+    } else {
+      sidebar.classList.remove('open');
+      document.querySelector('.open-btn').textContent = '☰';
+    }
+  }
+
+  // если кликнули на ссылку — закрываем меню
+  sidebar.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      document.querySelector('.open-btn').textContent = '☰';
+      menuOpen = false;
+    });
+  });
+  </script>
+
 
 </body>
 </html>
