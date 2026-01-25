@@ -4,13 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Программа — Интеграл Лебега и теория поля</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/paper.css">
+  <link rel="stylesheet" href="styles/task_window.css">
+  <link rel="stylesheet" href="styles/context_menu.css">
 </head>
 <body>
-  <!-- Кнопка для открытия меню -->
   <button class="open-btn" id="menuToggle" onclick="openNav()">☰</button>
 
-  <!-- Боковое меню -->
   <div id="sidebar" class="sidebar">
     <a href="index.html">Интеграл Лебега и теория поля</a>
     <a href="physics.html">Электричество и магнетизм</a>
@@ -55,6 +57,8 @@
           <li>Ульянов П.Л., Бахвалов В.Н. и др. Действительный анализ в задачах. — Физматлит, 2005.</li>
           <li>Зорич В.А. Математический анализ. — МЦНМО, 2021.</li>
         </ol>
+        <p><strong>Гусёвник</strong></p>
+          <a href="https://ngusev.ru/ma/matangus3.pdf">https://ngusev.ru/ma/matangus3.pdf</a>
       </section>
 
       <section class="assignments">
@@ -241,178 +245,20 @@
     </main>
   </div>
 
-  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
-    <div id="modalContent" style="position:relative; background:white; padding:10px; border-radius:8px; max-width:80%; max-height:80%; text-align:center;">
-      <span id="closeBtn" style="position:absolute; top:5px; right:10px; font-size:20px; font-weight:bold; cursor:pointer;">&times;</span>
-      <img id="modalImg" src="" alt="Картинка" style="max-width:100%; max-height:100%;">
+  <div id="modal">
+    <div id="modalContent">
+      <span id="closeBtn">&times;</span>
+      <img id="modalImg" src="" alt="Картинка">
     </div>
   </div>
 
-  <script>
-  const modal = document.getElementById('modal');
-  const modalImg = document.getElementById('modalImg');
-  const closeBtn = document.getElementById('closeBtn');
+  <div id="contextMenu">
+    <button id="toggleSolvedBtn">Пометить решённой</button>
+  </div>
 
-  document.querySelectorAll('.task-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const imgSrc = button.getAttribute('data-img');
-      modalImg.src = imgSrc;
-      modal.style.display = 'flex';
-    });
-  });
-
-  // Закрытие по крестику
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Закрытие по клику вне окна
-  window.addEventListener('click', e => {
-    if (e.target === modal) modal.style.display = 'none';
-  });
-
-  // Закрытие по клавише Esc
-  window.addEventListener('keydown', e => {
-    if (e.key === 'Escape') modal.style.display = 'none';
-  });
-  </script>
-
-  <script>
-  const sidebar = document.getElementById('sidebar');
-  let menuOpen = false;
-
-  function openNav() {
-    menuOpen = !menuOpen;
-
-    if (menuOpen) {
-      sidebar.classList.add('open');
-      document.querySelector('.open-btn').textContent = '×';
-    } else {
-      sidebar.classList.remove('open');
-      document.querySelector('.open-btn').textContent = '☰';
-    }
-  }
-
-  // если кликнули на ссылку — закрываем меню
-  sidebar.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      document.querySelector('.open-btn').textContent = '☰';
-      menuOpen = false;
-    });
-  });
-  </script>
-
-  <style>
-  /* Контекстное меню */
-  #contextMenu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    z-index: 10000;
-    min-width: 160px;
-    padding: 5px 0;
-  }
-
-  #contextMenu button {
-    display: block;
-    width: 100%;
-    border: none;
-    background: none;
-    padding: 8px 12px;
-    text-align: left;
-    font-size: 14px;
-    cursor: pointer;
-  }
-
-  #contextMenu button:hover {
-    background-color: #f0f0f0;
-  }
-
-  /* Решённая задача */
-  .task-btn.solved {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid rgb(27, 50, 2);
-  }
-</style>
-
-<!-- Само меню -->
-<div id="contextMenu">
-  <button id="toggleSolvedBtn">Пометить решённой</button>
-</div>
-
-<script>
-  const contextMenu = document.getElementById('contextMenu');
-  const toggleSolvedBtn = document.getElementById('toggleSolvedBtn');
-  let targetButton = null;
-
-  // Убираем стандартное меню для всех кнопок задач
-  document.querySelectorAll('.task-btn').forEach(button => {
-    button.addEventListener('contextmenu', e => {
-      e.preventDefault(); // 🔹 Отключаем стандартное меню
-      e.stopPropagation();
-
-      targetButton = button;
-
-      // Меняем текст кнопки в меню
-      if (targetButton.classList.contains('solved')) {
-        toggleSolvedBtn.textContent = 'Снять отметку';
-      } else {
-        toggleSolvedBtn.textContent = 'Пометить решённой';
-      }
-
-      // Показываем меню рядом с курсором
-      contextMenu.style.display = 'block';
-      contextMenu.style.top = e.pageY + 'px';
-      contextMenu.style.left = e.pageX + 'px';
-    });
-  });
-
-  // При клике по кнопке "пометить решённой"
-  toggleSolvedBtn.addEventListener('click', () => {
-    if (targetButton) {
-      targetButton.classList.toggle('solved');
-      saveSolvedTasks();
-    }
-    hideMenu();
-  });
-
-  // Скрываем меню при клике вне его
-  document.addEventListener('click', e => {
-    if (!contextMenu.contains(e.target)) hideMenu();
-  });
-
-  // Скрываем при Esc
-  window.addEventListener('keydown', e => {
-    if (e.key === 'Escape') hideMenu();
-  });
-
-  function hideMenu() {
-    contextMenu.style.display = 'none';
-  }
-
-  // Сохраняем и загружаем состояние решённых задач
-  function saveSolvedTasks() {
-    const solved = [];
-    document.querySelectorAll('.task-btn.solved').forEach(btn => solved.push(btn.dataset.img));
-    localStorage.setItem('solvedTasks', JSON.stringify(solved));
-  }
-
-  function loadSolvedTasks() {
-    const solved = JSON.parse(localStorage.getItem('solvedTasks') || '[]');
-    solved.forEach(img => {
-      const btn = document.querySelector(`.task-btn[data-img="${img}"]`);
-      if (btn) btn.classList.add('solved');
-    });
-  }
-
-  loadSolvedTasks();
-</script>
-
+  <script src="scripts/sidebar.js"></script>
+  <script src="scripts/task_buttons.js"></script>
+  <script src="scripts/context_menu.js"></script>
 
 </body>
 </html>
