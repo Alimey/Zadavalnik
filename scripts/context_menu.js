@@ -63,3 +63,4 @@ function loadSolvedTasks() {
 }
 
 loadSolvedTasks();
+export { targetButton };

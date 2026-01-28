@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="styles/context_menu.css">
 </head>
 <body>
-  <button class="open-btn" id="menuToggle" onclick="openNav()">☰</button>
+  <button class="opened_nav_btn" onclick="openNav()">☰</button>
 
-  <div id="sidebar" class="sidebar">
+  <div id="sidebar">
     <a href="index.html">Интеграл Лебега и теория поля</a>
     <a href="physics.html">Электричество и магнетизм</a>
   </div>
@@ -254,11 +254,14 @@
 
   <div id="contextMenu">
     <button id="toggleSolvedBtn">Пометить решённой</button>
+    <button id="addImgBtn">Загрузить изображение</button>
+    <input type="file" id="imgFile" hidden>
   </div>
 
+  <script type="module" src="scripts/app.js"></script>
   <script src="scripts/sidebar.js"></script>
-  <script src="scripts/task_buttons.js"></script>
-  <script src="scripts/context_menu.js"></script>
+  <script type="module" src="scripts/task_buttons.js"></script>
+  <script type="module" src="scripts/context_menu.js"></script>
 
 </body>
 </html>

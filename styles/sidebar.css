@@ -1,5 +1,5 @@
 /* Открывающая кнопка боковой панели */
-.open-btn {
+.opened_nav_btn {
   font-size: 20px;
   cursor: pointer;
   background-color: #8f8f8f;
@@ -15,12 +15,12 @@
 }
 
 /* Если на открывающую кнопку панели наведен курсор */
-.open-btn:hover {
+.opened_nav_btn:hover {
   background-color: #444;
 }
 
 /*Всё внутри боковой панели */
-.sidebar {
+#sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -37,12 +37,12 @@
 }
 
 /* Если к классу sidebar прибавился класс open, то плавно выдвинуть панель */
-.sidebar.open {
+#sidebar.opened_sidebar {
   transform: translateX(0);
 }
 
 /* Все ссылки внутри боковой панели */
-.sidebar a {
+#sidebar a {
   display: block;
   padding: 10px 20px;
   text-decoration: none;
@@ -56,7 +56,7 @@
 }
 
 /* Если на ссылку в боковой панели наведен указатель */
-.sidebar a:hover {
+#sidebar a:hover {
   background-color: #e5e5e5;
   padding-left: 25px;
 }
