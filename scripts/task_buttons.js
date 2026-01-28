@@ -11,7 +11,6 @@ const storage = supabase.storage.from("images");
 const modal = document.getElementById('modal');
 const modalImg = document.getElementById('modalImg');
 const closeBtn = document.getElementById('closeBtn');
-const modalContent = document.getElementById('modalContent');
 
 let currentBtnId = null; // кнопка, для которой открыта модалка
 

@@ -18,6 +18,7 @@ console.log(imgFile);
 
 // При клике открыть меню загрузки изображения
 addImgBtn.addEventListener('click', () => {
+  document.getElementById('contextMenu').style.display = 'none';
   imgFile.click();
 });
 
