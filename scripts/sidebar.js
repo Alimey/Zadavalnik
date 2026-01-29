@@ -1,4 +1,6 @@
-const sidebar = document.getElementById('sidebar');
+import { sidebar } from "./constants.js"
+
+
 let menuOpen = false;
 
 function openNav() {

@@ -1,6 +1,7 @@
-const contextMenu = document.getElementById('contextMenu');
-const toggleSolvedBtn = document.getElementById('toggleSolvedBtn');
-let targetButton = null;
+import { solvedBtn, contextMenu } from "./constants.js";
+
+
+let targetBtn = null;
 
 // Убираем стандартное меню для всех кнопок задач
 document.querySelectorAll('.task-btn').forEach(button => {
@@ -8,13 +9,13 @@ document.querySelectorAll('.task-btn').forEach(button => {
     e.preventDefault(); // 🔹 Отключаем стандартное меню
     e.stopPropagation();
 
-    targetButton = button;
+    targetBtn = button;
 
     // Меняем текст кнопки в меню
-    if (targetButton.classList.contains('solved')) {
-      toggleSolvedBtn.textContent = 'Снять отметку';
+    if (targetBtn.classList.contains('solved')) {
+      solvedBtn.textContent = 'Снять отметку';
     } else {
-      toggleSolvedBtn.textContent = 'Пометить решённой';
+      solvedBtn.textContent = 'Пометить решённой';
     }
 
     // Показываем меню рядом с курсором
@@ -25,9 +26,9 @@ document.querySelectorAll('.task-btn').forEach(button => {
 });
 
 // При клике по кнопке "пометить решённой"
-toggleSolvedBtn.addEventListener('click', () => {
-  if (targetButton) {
-    targetButton.classList.toggle('solved');
+solvedBtn.addEventListener('click', () => {
+  if (targetBtn) {
+    targetBtn.classList.toggle('solved');
     saveSolvedTasks();
   }
   hideMenu();
@@ -63,4 +64,4 @@ function loadSolvedTasks() {
 }
 
 loadSolvedTasks();
-export { targetButton };
+export { targetBtn };
