@@ -1,5 +1,5 @@
 /* Открывающая кнопка боковой панели */
-.opened_nav_btn {
+#opened_nav_btn {
   font-size: 20px;
   cursor: pointer;
   background-color: #8f8f8f;
@@ -15,7 +15,7 @@
 }
 
 /* Если на открывающую кнопку панели наведен курсор */
-.opened_nav_btn:hover {
+#opened_nav_btn:hover {
   background-color: #444;
 }
 

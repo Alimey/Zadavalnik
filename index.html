@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Программа — Интеграл Лебега и теория поля</title>
+  <title>Гармонический анализ</title>
   <link rel="stylesheet" href="styles/sidebar.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/paper.css">
@@ -11,33 +11,30 @@
   <link rel="stylesheet" href="styles/context_menu.css">
 </head>
 <body>
-  <button class="opened_nav_btn" onclick="openNav()">☰</button>
+  <button id="opened_nav_btn">☰</button>
 
   <div id="sidebar">
-    <a href="index.html">Интеграл Лебега и теория поля</a>
-    <a href="physics.html">Электричество и магнетизм</a>
+    <a href="index.html">Гармонический анализ</a>
+    <a href="physics.html">Оптика</a>
   </div>
 
   <div class="paper">
     <header class="seal">
-      <h1 class="title">Интеграл Лебега и теория поля</h1>
+      <h1 class="title">Гармонический анализ</h1>
     </header>
 
     <main>
       <section class="contents">
         <h2>Содержание курса (основные темы)</h2>
         <ol>
-          <li>Системы подмножеств (полукольца, кольца, алгебры, сигма-алгебры и пр.). Борелевская сигма-алгебра. Борелевские функции.</li>
-          <li>Конечно- и счётно-аддитивные меры. Внешняя мера Лебега, теорема Каратеодори. Внутренняя и внешняя регулярность меры Лебега. Измеримость множеств по Лебегу. Пример Витали неизмеримого множества.</li>
-          <li>Измеримые функции. Интеграл Лебега. Сходимость функций по мере и почти всюду. Теоремы: Леви, Фату, Лебега (мажорируемая сходимость). Абсолютная непрерывность интеграла Лебега. Пространства интегрируемых функций, их полнота. Неравенства Гёльдера, Минковского и Йенсена. Теоремы Рисса, Егорова и Лузина.</li>
-          <li>Сведение кратного интеграла к повторному. Теоремы Тонелли и Фубини.</li>
-          <li>Лемма Витали о покрытиях. Теорема Витали о тонком покрытии. Точки плотности измеримого множества, точки Лебега интегрируемой функции. Свёртка интегрируемых функций. Приближение интегрируемых функций гладкими.</li>
-          <li>Формула Грина. Потенциальные векторные поля. Условие независимости криволинейного интеграла второго рода от пути интегрирования.</li>
-          <li>Геометрический смысл модуля и знака якобиана. Теорема о замене переменных в кратном интеграле (доказательство для двумерного случая).</li>
-          <li>Поверхностные интегралы первого и второго рода. Ориентация поверхностей, площадь.</li>
-          <li>Формула Гаусса-Остроградского. Дивергенция и её геометрический смысл.</li>
-          <li>Формула Стокса. Ротор векторного поля. Условия независимости криволинейного интеграла второго рода.</li>
-          <li>Оператор Гамильтона (оператор «набла») и действия с ним. Основные соотношения.</li>
+          <li>Неравенства Гельдер и Минковского. Пространства $L_p$ и $l_p$, их полнота. Приближение функций из $L_p$ бесконечно гладкими. Теорема о непрерывности сдвига. Свертка и ее свойства.</li>
+          <li>Пространства со скалярным произведением. Ряд Фурье по ортонормированной системе. Минимальное свойство коэффициентов Фурье, неравенство Бесселя. Равенство Парсеваля. Связь понятий полноты и замкнутости ортонормированной системы. Теорема Рисса-Фишера.</li>
+          <li>Лемма Римана-Лебега об осцилляции. Тригонометрические ряды Фурье для абсолютно интегрируемых функций. Стремление к нулю коэффициентов Фурье. Представление частичной суммы ряда Фурье интегралом через ядро Дирихле. Принцип локализации. Достаточные условия сходимости рядов Фурье в точке. Равномерная сходимость рядов Фурье. Почленное дифференцирование и интегрирование рядов Фурье. Порядок убывания коэффициентов Фурье. Ряд Фурье в комплексной форме.</li>
+          <li>Суммирование рядов Фурье метоодм средних арифметических. Теоремы Вейерштрасса о приближении непрерывных функций тригонометрическими и алгебраическими многочленами.</li>
+          <li>Интегралы, зависящие от параметра. РАвномерная сходимость несобственных интегралов. НЕпрерывность, интегрирование и дифференцирование по параметру. Интегралы Дирихле и Лапласа. Интегралы Эйлера, гамма- и бета- функции. Выражение бета-функции через гамма-функцию.</li>
+          <li>Преобразование Фурье абсолютно интегрируемой функции. Достаточные условия сходимости интеграла Фурье. Формулы обращения. Преобразование Фурье производной и производная преобразования Фурье.</li>
+          <li>Пространства основных функций $\mathcal{D}(\mathbb{R})$ и $\mathcal{S}(\mathbb{R})$. Преобразование Фурье в пространстве $\mathcal{S}(\mathbb{R})$, равенство Парсеваля.</li>
+          <li>Пространства обобщенных функций $\mathcal{D}'(\mathbb{R})$ и $\mathcal{S}'(\mathbb{R})$. Регулярные и сингулярные обобщенные функции. Дельта-функция. Дифференцирование обобщенных функций. Преобразование Фурье в пространстве $\mathcal{S}'(\mathbb{R})$. Теорема Котельникова.</li>
         </ol>
       </section>
 
@@ -45,199 +42,152 @@
         <h2>Литература</h2>
         <p><strong>Основная</strong></p>
         <ol>
-          <li>Иванов Г. Е. Лекции по математическому анализу. В 2 ч. — Москва : МФТИ, 2011.</li>
-          <li>Карасёв Р.Н. Отдельные темы математического анализа. — https://rkarasev.ru/ ...</li>
-          <li>Петрович А.Ю. Лекции по математическому анализу. — Москва : МФТИ, 2017.</li>
-          <li>Бесов О.В. Лекции по математическому анализу. — Москва : Физматлит, 2020.</li>
-          <li>Яковлев Г.Н. Лекции по математическому анализу. — Москва : Физматлит, 2004.</li>
+          <li>Бесов О.В. Лекции по математическому анализу. - Москва: Физмалит, 2014, 2015, 2016, 2020.</li>
+          <li>Петрович А.Ю. Лекции по математическому анализу. В 3 Ч. Ч.3. Кратные интегралы. Гармонический анализ. — Москва : МФТИ, 2018.</li>
+          <li>Тер-Крикоров А.М., Шабунин М.И. Курс математического анализа. - Москва: Лаборатория знаний, 2020.</li>
+          <li>Иванов Г.Е. Лекции по математическому анализу. В 2 Ч. Ч. 2 - Мсоква: МФТИ, 2011.</li>
         </ol>
         <p><strong>Дополнительная</strong></p>
         <ol start="6">
-          <li>Богачев В.И., Смолянов О. Г. Действительный и функциональный анализ: университетский курс. — 2020.</li>
-          <li>Ульянов П.Л., Бахвалов В.Н. и др. Действительный анализ в задачах. — Физматлит, 2005.</li>
-          <li>Зорич В.А. Математический анализ. — МЦНМО, 2021.</li>
+          <li>Богачев В.И., Смолянов О.Г. Действительный и функциональный анализ: университетский курс. Москва: Институт космических исследований; Ижевск: РХД, 2020.</li>
+          <li>Виноградов О.Л. Математический анализ. Санкт-Петербург: БХВ-Петербург, 2017.</li>
+          <li>Зорич В.А. Математический анализ. В 2 ч. Ч. 2. — Москва: МЦНМО, 2021.</li>
+          <li>Колмогоров А.Н., Фомин С.В. Элементы теории функций и функционального анализа. - Москва: Физмалит, 2004, 2006, 2009, 2012.</li>
+          <li>Кудрявцев Л.Д. Курс математического анализа. В 3т. С.2,3. - Москва: Юрайт, 2025.</li>
+          <li>Никольский С.М. Курс математического анализа. В 2т. Т.1,2. - Москва: Наука, 1983.</li>
         </ol>
-        <p><strong>Гусёвник</strong></p>
+        <p><strong>Гусёвник (весна 2025)</strong></p>
           <a href="https://ngusev.ru/ma/matangus3.pdf">https://ngusev.ru/ma/matangus3.pdf</a>
       </section>
 
       <section class="assignments">
         <h2>Задания</h2>
         <article>
-          <h3>Первое задание (срок сдачи 6–11 октября)</h3>
-          <h4>I. Системы подмножеств</h4>
-          <p><b>С.4:</b> 
-            <button class="task-btn" data-img="images/C4/1_12.png">1.12</button>; 
-            <button class="task-btn" data-img="images/C4/2_29.png">2.29</button>;
-            <button class="task-btn" data-img="images/C4/3_6.png">3.6</button>;
-            <button class="task-btn" data-img="images/C4/3_18.png">3.18</button>;
+          <h3>Первое задание (срок сдачи 23-28 марта)</h3>
+          <h4>I. Нормированные и Евклидовы пространства</h4>
+          <p><b>С.3 §20:</b> 
+            <button class="task-btn">22*</button>;
+            <button class="task-btn">23</button>;
           </p>
           <p>
-            <button class="task-btn" data-img="images/T1/1.png">T.1</button>;
-            <button class="task-btn" data-img="images/T1/2.png">T.2</button>;
+            <button class="task-btn">T.1</button>;
+            <button class="task-btn">T.2</button>;
           </p>
-          <h4>II. Мера Лебега</h4>
-          <p><b>С.4:</b> 
-            <button class="task-btn" data-img="images/C4/3_84.png">3.84</button>;
-            <button class="task-btn" data-img="images/C4/3_86.png">3.86</button>;
-            <button class="task-btn" data-img="images/C4/3_95.png">3.95</button>;
-            <button class="task-btn" data-img="images/C4/3_96.png">3.96</button>;
-            <button class="task-btn" data-img="images/C4/6_90.png">6.90</button>;
+          <h4>II. Свёртка</h4>
+          <p>
+            <button class="task-btn">T.3</button>;
+            <button class="task-btn">T.4</button>;
+            <button class="task-btn">T.5</button>;
+          </p>
+          <h4>III. Тригонометрические ряды Фурье</h4>
+          <p><b>C.2 §22,</b> <i>в каждом примере постройте график суммы ряда Фурье и исследуйте на равномерную сходимость на $\mathbb{R}$:</i>
+            <button class="task-btn">110</button>;
+            <button class="task-btn">111(1, 4)</button>;
+            <button class="task-btn">1(1)</button>
+            <button class="task-btn">8</button>
+            <button class="task-btn">12</button>
+            <button class="task-btn">24</button>
+            <button class="task-btn">26</button>
+            <button class="task-btn">41</button>
+            <button class="task-btn">45</button>
+            <button class="task-btn">23*</button>
+            <button class="task-btn">27</button>
           </p>
           <p>
-            <button class="task-btn" data-img="images/T1/3.png">T.3</button>;
-            <button class="task-btn" data-img="images/T1/4.png">T.4</button>;
-            <button class="task-btn" data-img="images/T1/5.png">T.5</button>;
-            <button class="task-btn" data-img="images/T1/6.png">T.6</button>;
-            <button class="task-btn" data-img="images/T1/7.png">T.7*</button>;
+            <button class="task-btn">T.6</button>;
+            <button class="task-btn">T.7</button>;
+            <button class="task-btn">T.8</button>;
+            <button class="task-btn">T.9</button>;
+            <button class="task-btn">T.10</button>;
+            <button class="task-btn">T.11</button>;
+            <button class="task-btn">T.12</button>;
           </p>
-          <h4>III. Измеримые функции, интеграл Лебега</h4>
-          <p><b>C.4:</b> 
-            <button class="task-btn" data-img="images/C4/4_21.png">4.21*</button>;
-            <button class="task-btn" data-img="images/C4/4_26.png">4.26</button>;
-            <button class="task-btn" data-img="images/C4/4_43.png">4.43</button>;
-            <button class="task-btn" data-img="images/C4/5_25.png">5.25</button>;
-            <button class="task-btn" data-img="images/C4/5_79.png">5.79</button>;
-            <button class="task-btn" data-img="images/C4/6_66.png">6.66</button>;
-          </p>
+          <h4>IV. Всюду плотные множества, полнота систем функций</h4>
           <p>
-            <button class="task-btn" data-img="images/T1/8.png">T.8</button>;
-            <button class="task-btn" data-img="images/T1/9.png">T.9</button>;
-            <button class="task-btn" data-img="images/T1/10.png">T.10</button>;
-            <button class="task-btn" data-img="images/T1/11.png">T.11</button>;
-            <button class="task-btn" data-img="images/T1/12.png">T.12</button>;
-          </p>
-          <h4>IV. Разные виды сходимости</h4>
-          <p><b>C.4:</b> 
-            <button class="task-btn" data-img="images/C4/4_31.png">4.31(2,4)</button>;
-            <button class="task-btn" data-img="images/C4/4_40.png">4.40*</button>;
-            <button class="task-btn" data-img="images/C4/5_44.png">5.44</button>;
-            <button class="task-btn" data-img="images/C4/5_144.png">5.144*</button>;
-          </p>
-          <p>
-            <button class="task-btn" data-img="images/T1/13.png">T.13</button>;
-            <button class="task-btn" data-img="images/T1/14.png">T.14</button>;
+            <button class="task-btn">Т.13</button>;
+            <button class="task-btn">Т.14</button>;
+            <button class="task-btn">Т.15</button>;
+            <button class="task-btn">Т.16</button>;
+            <button class="task-btn">Т.17*</button>;
           </p>
         </article>
 
         <article>
-          <h3>Второе задание (срок сдачи 10–15 ноября)</h3>
-          <h4>I. Сведение кратных интегралов к повторным</h4>
-          <p><b>С.3 §8:</b> 
-            <button class="task-btn" data-img="images/C3/8/80.png">80(6)</button>;
-            <button class="task-btn" data-img="images/C3/8/83-6.png">83(6)</button>;
-            <button class="task-btn" data-img="images/C3/8/83-14.png">83(14)</button>;
-            <button class="task-btn" data-img="images/C3/8/85.png">85(2,5)</button>;
-            <button class="task-btn" data-img="images/C3/8/91.png">91(1)</button>;  
-            <button class="task-btn" data-img="images/C3/8/133.png">133(4)</button>;  
-            <button class="task-btn" data-img="images/C3/8/135.png">135(1)*</button>;  
-            <button class="task-btn" data-img="images/C3/8/139.png">139(1,3)</button>;
-            <button class="task-btn" data-img="images/C3/8/175.png">175(5)</button>;
-            <button class="task-btn" data-img="images/C3/8/176-2.png">176(2)</button>;
-            <button class="task-btn" data-img="images/C3/8/176-3.png">176(3)</button>;  
-            <button class="task-btn" data-img="images/C3/8/190.png">190*</button>;  
+          <h3>Второе задание (срок сдачи 11-16 мая)</h3>
+          <h4>I. Интегралы, зависящие от параметра. Интегралы Эйлера.</h4>
+          <p><b>С.3 §13:</b> 
+            <button class="task-btn">2(1)</button>;
+            <button class="task-btn">4</button>;
+            <button class="task-btn">14(5)</button>;
+            <button class="task-btn">17</button>;
+            <button class="task-btn">18(3, 4*)</button>;  
           </p>
-          <p><b>С.4:</b>
-            <button class="task-btn" data-img="images/C4/5_115.png">5.115</button>;
-            <button class="task-btn" data-img="images/C4/5_134.png">5.134</button>;
+          <p></p><b>C.3. §14: </b>
+            <p><button class="task-btn">1(1)</button> <i>исследовать также при $\alpha \in (1; +\inf)$</i>;</p> 
+            <p><button class="task-btn">1(2)</button> <i>исследовать также при $\alpha \in (0;1)$</i>;</p> 
+            <button class="task-btn">6(4, 6)</button>;
+            <button class="task-btn">7(2, 4, 6)</button>;
           </p>
           <p>
-            <button class="task-btn" data-img="images/T2/1.png">T.1</button>;
-            <button class="task-btn" data-img="images/T2/2.png">T.2</button>;
-            <button class="task-btn" data-img="images/T2/3.png">T.3</button>;
-            <button class="task-btn" data-img="images/T2/4.png">T.4*</button>;
+            <button class="task-btn">T.1</button>;
           </p>
-          <h4>II. Замена переменной в кратном интеграле</h4>
-          <p><b>С.3 §8:</b> 
-            <button class="task-btn" data-img="images/C3/8/102.png">102(4)</button>;
-            <button class="task-btn" data-img="images/C3/8/110.png">110(3)</button>;
-            <button class="task-btn" data-img="images/C3/8/107.png">107(4)</button>;
-            <button class="task-btn" data-img="images/C3/8/124.png">124(1,3)</button>;
-            <button class="task-btn" data-img="images/C3/8/144.png">144(3,6)</button>;  
-            <button class="task-btn" data-img="images/C3/8/146.png">146(3)</button>;  
-            <button class="task-btn" data-img="images/C3/8/148.png">148(3)</button>;  
-            <button class="task-btn" data-img="images/C3/8/257.png">257</button>;
+          <p><b>С.3 §15:</b>
+            <button class="task-btn">1(3, 4)</button> (по теореме Фубини);
+            <button class="task-btn">2(3)</button>;
+            <button class="task-btn">3(3)</button>;
+            <button class="task-btn">6(1, 4)</button>;
+            <button class="task-btn">13(4)</button>;
+            <button class="task-btn">15(4)</button>;
           </p>
-          <p><b>С.3 §9:</b> 
-            <button class="task-btn" data-img="images/C3/9/6.png">6(2)</button>;
-            <button class="task-btn" data-img="images/C3/9/13.png">13(6)</button>;
-            <button class="task-btn" data-img="images/C3/9/15.png">15(4)</button>;
-            <button class="task-btn" data-img="images/C3/9/16.png">16(5)</button>;
-            <button class="task-btn" data-img="images/C3/9/19.png">19(6)</button>;  
-            <button class="task-btn" data-img="images/C3/9/63.png">63(6)</button>;
+          <p><b>С.3. §16:</b>
+            <button class="task-btn">7(2)</button>;
+            <button class="task-btn">9(2)</button>;
+            <button class="task-btn">12(8)</button>;
+            <button class="task-btn">10*(4)</button>;
           </p>
-          <h4>III. Криволинейные интегралы. Формула Грина</h4>
-          <p><b>C.3 §10:</b>
-            <button class="task-btn" data-img="images/C3/10/2.png">2(2,3)</button>;
-            <button class="task-btn" data-img="images/C3/10/16.png">16</button>;
-            <button class="task-btn" data-img="images/C3/10/30.png">30(1)</button>;
-            <button class="task-btn" data-img="images/C3/10/37.png">37</button>;
-            <button class="task-btn" data-img="images/C3/10/40.png">40</button>;
-            <button class="task-btn" data-img="images/C3/10/47.png">47*</button>;
-            <button class="task-btn" data-img="images/C3/10/50.png">50</button>;
-            <button class="task-btn" data-img="images/C3/10/65.png">65</button>;
-            <button class="task-btn" data-img="images/C3/10/81.png">81(5)</button>;
-            <button class="task-btn" data-img="images/C3/10/85.png">85(4)</button>;
-            <button class="task-btn" data-img="images/C3/10/104.png">104(2)</button>;
-            <button class="task-btn" data-img="images/C3/10/112.png">112(1)</button>;
+          <p><b>С.3. §12:</b>
+            <button class="task-btn">213*</button>;
+            <button class="task-btn">218*</button>;
           </p>
-          <p>
-            <button class="task-btn" data-img="images/T2/5.png">T.5</button>;
+          <h4>II. Преобразование Фурье. Интеграл Фурье.</h4>
+          <p><b>С.2 §12:</b> 
+            <button class="task-btn">252</button>;
           </p>
-        </article>
-
-        <article>
-          <h3>Третье задание (срок сдачи 8–13 декабря)</h3>
-          <h4>I. Поверхностные интегралы</h4>
-          <p><b>C.3 §9:</b>
-            <button class="task-btn" data-img="images/C3/9/28.png">28</button>;
-            <button class="task-btn" data-img="images/C3/9/35.png">35</button>;
-            <button class="task-btn" data-img="images/C3/9/50.png">50</button>;
-            <button class="task-btn" data-img="images/C3/9/51.png">51</button>;
+          <p> 
+            <button class="task-btn">Т.2</button>;
+            <button class="task-btn">Т.3</button>;
+            <button class="task-btn">Т.4</button>;
           </p>
-          <p><b>C.3 §11:</b>
-            <button class="task-btn" data-img="images/C3/11/2.png">2(2)</button>;
-            <button class="task-btn" data-img="images/C3/11/14.png">14*</button>;
-            <button class="task-btn" data-img="images/C3/11/18.png">18(1)</button>;
-            <button class="task-btn" data-img="images/C3/11/34.png">34</button>;
-            <button class="task-btn" data-img="images/C3/11/37.png">37(2)</button>;
-            <button class="task-btn" data-img="images/C3/11/41.png">41</button>;
-            <button class="task-btn" data-img="images/C3/11/42.png">42</button>;
-            <button class="task-btn" data-img="images/C3/11/49.png">49</button>;
+          <p><b>С.3. §17:</b>
+            <button class="task-btn">7(4)</button>;
+            <button class="task-btn">8(1, 2, 5)</button>;
+            <button class="task-btn">10(2, 3)</button>;
+            <button class="task-btn">14(1, 3)</button>;
+            <button class="task-btn">2(2)</button>;
+            <button class="task-btn">5(1)</button>;
+            <button class="task-btn">6(1)</button>;
+            <button class="task-btn">17(1)*</button>;
           </p>
-          <h4>II. Формулы Гаусса-Остроградского и Стокса</h4>
-          <p><b>C.3 §11:</b>
-            <button class="task-btn" data-img="images/C3/11/47.png">47</button>;
-            <button class="task-btn" data-img="images/C3/11/52.png">52(2,3)</button>;
-            <button class="task-btn" data-img="images/C3/11/54.png">54</button>;
-            <button class="task-btn" data-img="images/C3/11/57.png">57(2)</button>;
-            <button class="task-btn" data-img="images/C3/11/62.png">62</button>;
-            <button class="task-btn" data-img="images/C3/11/63.png">63(2)</button>;
-            <button class="task-btn" data-img="images/C3/11/64.png">64</button>;
-            <button class="task-btn" data-img="images/C3/11/65.png">65(2)</button>;
+          <h4>III. Пространство функций $\mathcal{S}(\mathbb{R})$</h4>
+          <p> 
+            <button class="task-btn">Т.5</button>;
+            <button class="task-btn">Т.6</button>;
+            <button class="task-btn">Т.7</button>;
+            <button class="task-btn">T.8*</button>;
           </p>
-          <h4>III. Элементы теории поля</h4>
-          <p><b>C.3 §12:</b>
-            <button class="task-btn" data-img="images/C3/12/13.png">13</button>;
-            <button class="task-btn" data-img="images/C3/12/15.png">15(3,5)</button>;
-            <button class="task-btn" data-img="images/C3/12/19.png">19</button>;
-            <button class="task-btn" data-img="images/C3/12/38.png">38(3)</button>;
-            <button class="task-btn" data-img="images/C3/12/40.png">40(2)</button>;
-            <button class="task-btn" data-img="images/C3/12/41.png">41(4,6,7)</button>;
-            <button class="task-btn" data-img="images/C3/12/42.png">42(2)</button>;
-            <button class="task-btn" data-img="images/C3/12/49.png">49(5,6)</button>;
-            <button class="task-btn" data-img="images/C3/12/50.png">50(5)</button>;
-            <button class="task-btn" data-img="images/C3/12/54.png">54(2)</button>;
-            <button class="task-btn" data-img="images/C3/12/70.png">70(5)</button>;
-            <button class="task-btn" data-img="images/C3/12/71.png">71*</button>;
-            <button class="task-btn" data-img="images/C3/12/96.png">96</button>;
-            <button class="task-btn" data-img="images/C3/12/94.png">94(6)</button>
-            <button class="task-btn" data-img="images/C3/12/112.png">112(1,2)</button>;
-            <button class="task-btn" data-img="images/C3/12/119.png">119*</button>;
+          <h4>IV. Обобщенные функции.</h4>
+          <p><b>C.3. §21:</b>
+            <button class="task-btn">73</button>
+            <button class="task-btn">58</button>
+            <button class="task-btn">60</button>
+            <button class="task-btn">84</button>
           </p>
           <p>
-            <button class="task-btn" data-img="images/T3/1.png">T.1</button>;
-            <button class="task-btn" data-img="images/T3/2.png">T.2</button>;
+            <button class="task-btn">T.9</button>
+            <button class="task-btn">T.10</button>
+            <button class="task-btn">T.11</button>
+            <button class="task-btn">T.12</button>
+            <button class="task-btn">T.13</button>
           </p>
         </article>
       </section>
@@ -262,6 +212,16 @@
   <script type="module" src="scripts/sidebar.js"></script>
   <script type="module" src="scripts/task_buttons.js"></script>
   <script type="module" src="scripts/context_menu.js"></script>
+
+
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </body>
 </html>

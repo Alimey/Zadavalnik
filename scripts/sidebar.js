@@ -1,23 +1,23 @@
-import { sidebar } from "./constants.js"
+import { sidebar, openNavBtn } from "./constants.js"
 
 
 let menuOpen = false;
 
-function openNav() {
+openNavBtn.addEventListener( 'click', () => {
   menuOpen = !menuOpen;
   if (menuOpen) {
     sidebar.classList.add('opened_sidebar');
-    document.querySelector('.opened_nav_btn').textContent = '×';
+    openNavBtn.textContent = '×';
   } else {
     sidebar.classList.remove('opened_sidebar');
-    document.querySelector('.opened_nav_btn').textContent = '☰';
+    openNavBtn.textContent = '☰';
   }
-}
+});
 
 sidebar.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     sidebar.classList.remove('opened_sidebar');
-    document.querySelector('.opened_nav_btn').textContent = '☰';
+    openNavBtn.textContent = '☰';
     menuOpen = false;
   });
 });

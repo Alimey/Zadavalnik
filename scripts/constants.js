@@ -22,6 +22,12 @@ const modalCloseBtn = document.getElementById("modalCloseBtn");
 
 // Боковое меню
 const sidebar = document.getElementById('sidebar');
+const openNavBtn = document.getElementById('opened_nav_btn');
 
 
-export { table, bucket, contextMenu, solvedBtn, addImgBtn, imgInputFile, modal, modalImg, modalCloseBtn, sidebar };
+export { 
+  table, bucket, contextMenu, 
+  solvedBtn, addImgBtn, imgInputFile, 
+  modal, modalImg, modalCloseBtn, 
+  sidebar, openNavBtn
+};
